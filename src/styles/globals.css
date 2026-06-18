@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
