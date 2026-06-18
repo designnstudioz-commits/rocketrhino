@@ -3,7 +3,7 @@ import svgPaths from "../../imports/Frame261/svg-nx79ueqlp7";
 
 interface FAQItemProps {
   question: string;
-  answer: string;
+  answer: string | string[];
   isOpen: boolean;
   onClick: () => void;
 }
@@ -81,14 +81,16 @@ function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
         <div
           className="transition-all duration-300 ease-in-out overflow-hidden"
           style={{
-            maxHeight: isOpen ? "500px" : "0px",
+            maxHeight: isOpen ? "600px" : "0px",
             opacity: isOpen ? 1 : 0,
           }}
         >
-          <div className="px-[20px] sm:px-[24px] pt-[20px] sm:pt-[24px] pb-[20px] sm:pb-[24px]">
-            <p className="font-['Inter:Regular',sans-serif] font-normal text-[#9ca3af] text-[14px] sm:text-[15px] md:text-[16px] leading-[22px] sm:leading-[24px] md:leading-[26px]">
-              {answer}
-            </p>
+          <div className="px-[20px] sm:px-[24px] pt-[20px] sm:pt-[24px] pb-[20px] sm:pb-[24px] flex flex-col gap-[12px]">
+            {(Array.isArray(answer) ? answer : [answer]).map((para, i) => (
+              <p key={i} className="font-['Inter:Regular',sans-serif] font-normal text-[#9ca3af] text-[14px] sm:text-[15px] md:text-[16px] leading-[22px] sm:leading-[24px] md:leading-[26px]">
+                {para}
+              </p>
+            ))}
           </div>
         </div>
       </div>
@@ -102,63 +104,68 @@ export default function FAQSection() {
   const faqs = [
     {
       question: "Do you work with all types of businesses?",
-      answer:
-        "We primarily work with service businesses, agencies, and companies where partnerships can drive meaningful revenue. However, we do accept clients from other niches if there is a mutual fit on a case by case basis.",
+      answer: "We primarily work with service businesses, agencies, and companies where partnerships can drive meaningful revenue. However, we do accept clients from other niches if there is a mutual fit on a case by case basis.",
     },
     {
       question: "Can we start with Acquire and later switch to Activate?",
-      answer:
-        "Yes, you can upgrade from Acquire to Activate at any time. We'll ensure a smooth transition and build upon the foundation you've already established.",
+      answer: [
+        "Yes. You can start with Acquire and move to Activate once you've built a partner pipeline.",
+        "In many cases, there may be a short overlap period — as new partners come in, some level of activation is needed while acquisition is still ongoing. We guide you through this transition to ensure momentum is maintained without disrupting your pipeline.",
+      ],
     },
     {
       question: "Can we switch between Core and Done For You?",
-      answer:
-        "Absolutely. You can upgrade or downgrade your service level as your needs change. We're flexible and want to support you in the way that works best for your team.",
+      answer: [
+        "Core is the foundation of most engagements, as it ensures the right strategy and systems are in place. You can add or remove the Done For You execution layer anytime based on your needs.",
+        "Done For You pricing is offered as part of the bundled model with Core. If you're looking for execution-only support, that is scoped separately based on requirements.",
+      ],
     },
     {
       question: "How do we get started?",
-      answer:
-        "Book a strategy call with our team. We'll assess your business, discuss your partnership goals, and recommend the right package and approach for your situation.",
+      answer: "Book a strategy call. We assess mutual fit, define priorities, and align on the best plan based on availability.",
     },
     {
       question: "How long does it take to set up a partner program?",
-      answer:
-        "Typically 2-4 weeks for initial setup, depending on the complexity of your offering and existing systems. We move quickly while ensuring everything is done right.",
+      answer: "It depends on your business, goals, and existing setup. Most programs take a few weeks to structure and begin execution.",
     },
     {
       question: "When can we expect results?",
-      answer:
-        "Most clients see their first partner-driven leads within 30-60 days. Revenue typically follows 60-90 days after launch, though this varies based on your sales cycle.",
+      answer: "Partnerships are a compounding growth channel. We don't guarantee sales, but we build the right systems, cadence, and structure to generate consistent opportunities. Results vary based on effort, market, and execution.",
     },
     {
       question: "How long should we test this before evaluating success?",
-      answer:
-        "We recommend a minimum 6-month commitment to properly evaluate partnership performance. Building relationships takes time, and the best results compound over months.",
+      answer: "Typically, 3–6 months is recommended to properly test and validate partnerships as a growth channel.",
     },
     {
       question: "Can you just set things up and train our team?",
-      answer:
-        "Yes, that's our Acquire package. We design your program, build the assets, and train your team to run it. Perfect if you have the bandwidth to manage partnerships internally.",
+      answer: "Yes. Many clients start with the Manage plan along with the Done For You upgrade for 1–3 months to build and run the system, then scale down or transition once their team is fully trained.",
     },
     {
       question: "What's the difference between Core and Done For You?",
-      answer:
-        "Core gives you the strategy, frameworks, and guidance. Done For You means we execute everything for you - from outreach to partner onboarding to ongoing management.",
+      answer: [
+        "Core includes strategy, playbooks, weekly advising, and ongoing oversight so your team can execute effectively.",
+        "Done For You includes full execution, management, and implementation by our team.",
+      ],
     },
     {
       question: "Can you act as a fractional Head of Partnerships?",
-      answer:
-        "Yes, our Activate Done For You package essentially functions as your fractional partnerships team, handling strategy, execution, and ongoing optimization.",
+      answer: "Yes. Many clients work with us in a fractional capacity where we help lead and guide their partnership strategy, systems, and execution. You can choose the level of involvement through our plans or opt for a more tailored engagement.",
     },
     {
       question: "Can we fully outsource our partnerships to you?",
-      answer:
-        "Yes, with our Done For You service. We handle recruitment, onboarding, enablement, and ongoing partner management. You stay involved in approvals and relationship building, but we do the heavy lifting.",
+      answer: "Yes. Our Done For You and Manage plans are designed for companies that want us to handle their partner program end-to-end — from acquisition to activation and ongoing management. For more complex needs, we also offer custom engagements.",
     },
     {
       question: "Is there a long-term contract?",
-      answer:
-        "We work on a month-to-month basis after an initial 3-month commitment. We believe in earning your business every month through results, not locking you into long contracts.",
+      answer: "No. Engagements are flexible with no long-term lock-ins. You can cancel your subscription anytime.",
+    },
+    {
+      question: "Can we start small before choosing a monthly plan?",
+      answer: "Yes. Advisory Hours are designed for companies that want to test the fit, get expert guidance, or clarify what kind of partnership support they need before committing to a monthly plan.",
+    },
+    {
+      question: "What can Advisory Hours be used for?",
+      answer: "They can be used for strategy reviews, partner list feedback, outreach script review, activation planning, workflow cleanup, tool guidance, and light implementation support. Larger execution, outreach, activation, and program management work is handled through monthly plans.",
     },
   ];
 

@@ -29,36 +29,38 @@ function CheckmarkIcon() {
   );
 }
 
+const INDUSTRIES = [
+  "Agencies",
+  "Professional Services",
+  "SaaS Platforms",
+  "Marketplaces",
+  "E-Commerce",
+  "Media & Newsletters",
+  "Wellness",
+  "Education",
+  "Events",
+  "Tourism",
+  "Home Services",
+  "Accounting & Finance",
+  "Law Firms",
+  "Supply Chain & Manufacturing",
+  "HR",
+  "Sports & Performance",
+];
+
 export default function HighTrustIndustries() {
-  const industriesRow1 = [
-    "Home Services",
-    "Accounting & Finance",
-    "Events",
-    "Tourism",
-    "Education",
-  ];
-
-  const industriesRow2 = [
-    "Marketing",
-    "Consulting",
-    "Supply Chain/Manufacturing",
-    "HR",
-    "Law Firms",
-  ];
-
   return (
     <div className="bg-[#05060a] w-full py-[60px] sm:py-[80px] md:py-[100px] lg:py-[126px]">
-      <div className="max-w-[997px] mx-auto px-[16px] sm:px-[24px] md:px-[32px] lg:px-[40px]">
+      <div className="max-w-[1100px] mx-auto px-[16px] sm:px-[24px] md:px-[32px] lg:px-[40px]">
         {/* Header Section */}
         <div className="flex flex-col items-center text-center mb-[40px] md:mb-[60px]">
           <h2 className="font-['Montserrat:Bold',sans-serif] font-bold text-white text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-[34px] sm:leading-[42px] md:leading-[54px] lg:leading-[61px] mb-[20px] md:mb-[24px] max-w-[280px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[821px]">
             Partnerships Work Across Every{" "}
             <span className="text-[#bf00ff]">High-Trust</span> Industry
           </h2>
-          <p className="font-['Montserrat:Light',sans-serif] font-light text-[#cacaca] text-[14px] sm:text-[16px] md:text-[20px] lg:text-[24px] leading-[22px] sm:leading-[26px] md:leading-[30px] lg:leading-[32px] max-w-[280px] sm:max-w-[500px] md:max-w-[750px] lg:max-w-[951px]">
-            RocketRhino™ has helped agencies, trades, and professional service
-            firms build high-performing partner programs across industries
-            including:
+          <p className="font-['Montserrat:Light',sans-serif] font-light text-[#cacaca] text-[14px] sm:text-[16px] md:text-[20px] lg:text-[24px] leading-[22px] sm:leading-[26px] md:leading-[30px] lg:leading-[32px] max-w-[280px] sm:max-w-[500px] md:max-w-[750px] lg:max-w-[900px]">
+            RocketRhino™ helps premium businesses build partner programs across
+            high-trust, relationship-driven industries including:
           </p>
         </div>
 
@@ -73,21 +75,11 @@ export default function HighTrustIndustries() {
           </div>
         </div>
 
-        {/* Industry Tags */}
-        <div className="flex flex-col gap-[24px] md:gap-[34px] items-center mb-[40px] md:mb-[62px]">
-          {/* Row 1 */}
-          <div className="flex flex-wrap justify-center gap-[12px] sm:gap-[16px] md:gap-[20px] lg:gap-[24px]">
-            {industriesRow1.map((industry) => (
-              <IndustryTag key={industry} label={industry} />
-            ))}
-          </div>
-
-          {/* Row 2 */}
-          <div className="flex flex-wrap justify-center gap-[12px] sm:gap-[16px] md:gap-[20px] lg:gap-[24px]">
-            {industriesRow2.map((industry) => (
-              <IndustryTag key={industry} label={industry} />
-            ))}
-          </div>
+        {/* Industry Pills */}
+        <div className="flex flex-wrap justify-center gap-[12px] sm:gap-[14px] md:gap-[16px] mb-[40px] md:mb-[62px]">
+          {INDUSTRIES.map((industry) => (
+            <IndustryTag key={industry} label={industry} />
+          ))}
         </div>
 
         {/* Bottom Badge */}
@@ -95,7 +87,7 @@ export default function HighTrustIndustries() {
           <div className="bg-[rgba(34,57,191,0.16)] border border-[#2a2b2d] rounded-[14px] px-[16px] sm:px-[20px] py-[12px] sm:py-[17px] flex items-center gap-[8px] sm:gap-[10px]">
             <CheckmarkIcon />
             <p className="font-['Montserrat:Light',sans-serif] text-white text-[14px] sm:text-[16px] md:text-[18px] lg:text-[22px] leading-[16px] whitespace-nowrap">
-              Partner programs built across 10+ industries
+              Partner programs built across 16+ industries
             </p>
           </div>
         </div>

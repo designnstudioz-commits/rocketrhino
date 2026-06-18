@@ -1,3 +1,46 @@
+/* Partner slider dots */
+.partner-slider .slick-list { overflow: visible; padding: 12px 0 32px; }
+.partner-slider .slick-slide { height: auto; }
+.partner-slider .slick-slide > div { height: 100%; }
+.partner-slider .slick-track { display: flex !important; align-items: stretch; }
+
+.partner-slider .slick-dots {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.partner-slider .slick-dots li {
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+.partner-slider .slick-dots li button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(191, 0, 255, 0.3);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  font-size: 0;
+}
+
+.partner-slider .slick-dots li button:before {
+  display: none;
+}
+
+.partner-slider .slick-dots li.slick-active button {
+  background: #bf00ff;
+  transform: scale(1.3);
+}
+
 /* Pricing slider dots */
 .pricing-slider .slick-dots {
   display: flex !important;

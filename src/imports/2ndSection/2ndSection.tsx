@@ -5,7 +5,7 @@ import GlowComponent from "../Glow/Glow";
 
 function Group1() {
   return (
-    <div className="flex flex-col gap-[12px] md:gap-[24px] text-[#0f0f0f] text-center md:text-left">
+    <div className="flex flex-col gap-[4px] md:gap-[6px] text-[#0f0f0f] text-center md:text-left">
       <div className="flex flex-col font-['Montserrat:SemiBold',sans-serif] justify-center text-[20px] md:text-[28px] lg:text-[32px]">
         <p className="leading-[normal]">{`Featured in CEO Times `}</p>
       </div>
@@ -97,10 +97,15 @@ function Group() {
 
 function Group2() {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center gap-[20px] md:gap-0 relative w-full max-w-[1200px]">
+    <a
+      href="https://ceotimes.com/why-partnership-led-growth-is-becoming-the-most-powerful-channel-for-modern-businesses/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col md:flex-row items-center justify-center gap-[20px] md:gap-0 relative w-full max-w-[1200px] cursor-pointer hover:opacity-75 transition-opacity duration-200"
+    >
       <Group1 />
       <Group />
-    </div>
+    </a>
   );
 }
 

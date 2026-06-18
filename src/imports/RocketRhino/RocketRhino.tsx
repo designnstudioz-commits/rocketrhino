@@ -13,6 +13,7 @@ import HighTrustIndustries from "../../app/components/HighTrustIndustries";
 import FAQSection from "../../app/components/FAQSection";
 import AboutBilal from "../../app/components/AboutBilal";
 import Testimonials from "../../app/components/Testimonials";
+import ToolsSection from "../../app/components/ToolsSection";
 import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -133,7 +134,7 @@ function Frame115() {
   };
 
   return (
-    <div className="flex font-['Montserrat:Medium',sans-serif] gap-[47px] items-center leading-[0] not-italic text-[16px] text-center text-white whitespace-nowrap">
+    <div className="flex font-['Montserrat:Medium',sans-serif] gap-[47px] items-center leading-[0] not-italic text-[16px] text-center text-[#050047] whitespace-nowrap">
       <div
         onClick={scrollToHowItWorks}
         className="flex flex-col justify-center relative shrink-0 cursor-pointer transition-all duration-200 hover:text-[#bf00ff]"
@@ -1148,11 +1149,11 @@ function Frame231() {
 function Frame232() {
   return (
     <div className="content-stretch flex flex-col gap-[5px] items-start relative shrink-0 w-full">
-      <div className="flex flex-col font-['Montserrat:Bold',sans-serif] justify-center relative shrink-0 text-[32px] md:text-[72px] text-white tracking-[-1.8px] w-full">
-        <p className="leading-[36px] md:leading-[72px]">People buy from people</p>
+      <div className="flex flex-col font-['Montserrat:Bold',sans-serif] justify-center relative shrink-0 text-[28px] md:text-[60px] text-white tracking-[-1.8px] w-full">
+        <p className="leading-[34px] md:leading-[66px]">Because People Buy from People</p>
       </div>
-      <div className="flex flex-col font-['Montserrat:ExtraBold',sans-serif] justify-center relative shrink-0 text-[#bf00ff] text-[42px] md:text-[96px] tracking-[-2.4px] w-full">
-        <p className="leading-[48px] md:leading-[96px]">THEY TRUST</p>
+      <div className="flex flex-col font-['Montserrat:ExtraBold',sans-serif] justify-center relative shrink-0 text-[#bf00ff] text-[36px] md:text-[78px] tracking-[-2.4px] w-full">
+        <p className="leading-[42px] md:leading-[82px]">They Trust</p>
       </div>
     </div>
   );
@@ -1165,6 +1166,9 @@ function Frame233() {
         <p className="leading-[20px] md:leading-[32px]">WHY THIS WORKS</p>
       </div>
       <Frame232 />
+      <div className="flex flex-col font-['Montserrat:SemiBold',sans-serif] justify-center relative shrink-0 text-white text-[17px] md:text-[26px] tracking-[-0.4px] w-full mt-[10px] md:mt-[18px]">
+        <p className="leading-[24px] md:leading-[34px]">Partnerships Fail Without Execution Ownership</p>
+      </div>
     </div>
   );
 }
@@ -1173,15 +1177,14 @@ function Frame234() {
   return (
     <div className="col-1 content-stretch flex flex-col items-start ml-0 md:ml-[108px] mt-0 not-italic relative row-1 w-full md:w-[867px] p-[0px]">
       <Frame233 />
-      <div className="flex flex-col font-['Inter:Light',sans-serif] font-light justify-center relative shrink-0 text-[#cacaca] text-[16px] md:text-[24px]">
+      <div className="flex flex-col font-['Inter:Light',sans-serif] font-light justify-center relative shrink-0 text-[#cacaca] text-[16px] md:text-[24px] mt-[16px] md:mt-[24px]">
         <p className="font-['Montserrat:Light',sans-serif] leading-[24px] md:leading-[32px] mb-0">
-          Most businesses treat partnerships like a side
-          project.
+          Most businesses treat partnerships like a side project.
         </p>
         <p className="font-['Montserrat:Light',sans-serif]">
           <span className="leading-[24px] md:leading-[32px] text-[#bf00ff]">{`RocketRhino™ `}</span>
           <span className="leading-[24px] md:leading-[32px]">
-            turns them into a structured revenue channel.
+            turns scattered relationships into a structured revenue channel with the strategy, systems, outreach, activation, follow-up, and reporting needed to make partnerships work.
           </span>
         </p>
       </div>
@@ -1244,15 +1247,10 @@ function PartnerRevenue() {
       className="content-stretch flex flex-col gap-[24px] md:gap-[36px] items-center not-italic relative shrink-0 text-center w-full max-w-[1185px]"
       data-name="Partner Revenue"
     >
-      <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center min-w-full relative shrink-0 text-[32px] md:text-[60px] text-white tracking-[-1.5px] w-[min-content]">
-        <p className="leading-[36px] md:leading-[60px] mb-0">
-          RocketRhino™: The Partner GrowthSystem
-        </p>
-        <p>
-          <span className="leading-[36px] md:leading-[60px]">{`Behind Millions in `}</span>
-          <span className="font-['Inter:Bold',sans-serif] font-bold leading-[36px] md:leading-[60px] not-italic text-[#bf00ff]">
-            Partner Revenue
-          </span>
+      <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center min-w-full relative shrink-0 text-[32px] md:text-[60px] text-white tracking-[-1.5px] text-center">
+        <p className="leading-[40px] md:leading-[68px]">
+          RocketRhino™: The Execution-First Partner Growth System Behind Millions in{" "}
+          <span className="text-[#bf00ff]">Partner Revenue</span>
         </p>
       </div>
       <div className="flex flex-col font-['Montserrat:Light',sans-serif] justify-center relative shrink-0 text-[#cacaca] text-[16px] md:text-[24px] w-full max-w-[760px]">
@@ -3330,18 +3328,18 @@ function Frame241() {
 
 function Group22() {
   return (
-    <div className="font-['Inter:Bold',sans-serif] font-bold flex flex-wrap items-center justify-center gap-x-[8px] md:gap-x-[12px] leading-[0] not-italic relative shrink-0 text-[32px] md:text-[42px] lg:text-[52.167px] text-center tracking-[-0.6086px]">
-      <p className="leading-[normal] text-[#111827]">{`Simple, `}</p>
-      <p
-        className="bg-clip-text leading-[normal] text-[transparent]"
+    <p className="font-['Inter:Bold',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[32px] md:text-[42px] lg:text-[52.167px] text-center tracking-[-0.6086px] text-[#111827] w-full">
+      Built for companies serious about{" "}
+      <span
+        className="bg-clip-text text-[transparent]"
         style={{
           backgroundImage:
             "linear-gradient(173.864deg, rgb(139, 92, 246) 0%, rgb(59, 130, 246) 100%)",
         }}
       >
-        Transparent Pricing
-      </p>
-    </div>
+        partnerships
+      </span>
+    </p>
   );
 }
 
@@ -3356,9 +3354,9 @@ function Frame() {
         className="absolute border-0 border-[#e5e7eb] border-solid inset-0 pointer-events-none"
       />
       <div className="font-['Inter:Regular',sans-serif] font-normal leading-[0] not-italic relative shrink-0 text-[#6b7280] text-[14px] md:text-[16px] lg:text-[17.389px] text-center tracking-[-0.4347px] w-full z-[1]">
-        <p className="leading-[22px] md:leading-[26px] lg:leading-[28.692px] mb-0">{`No long contracts. No hidden fees. Choose the level of support you `}</p>
+        <p className="leading-[22px] md:leading-[26px] lg:leading-[28.692px] mb-0">Flexible engagement. Clear scope. No hidden fees.</p>
         <p className="leading-[22px] md:leading-[26px] lg:leading-[28.692px]">
-          need to build and scale partner program.
+          Choose the level of support that fits your stage.
         </p>
       </div>
     </div>
@@ -9402,6 +9400,15 @@ function HighTrustIndustriesSection() {
   );
 }
 
+// Section 4.63: Tools Section
+function ToolsSectionWrapper() {
+  return (
+    <section className="w-full">
+      <ToolsSection />
+    </section>
+  );
+}
+
 // Section 4.65: Testimonials Section
 function TestimonialsSection() {
   return (
@@ -9457,6 +9464,7 @@ function Frame247() {
       <HowItWorksSection />
       <StrategicPartnerChannelsSection />
       <HighTrustIndustriesSection />
+      <ToolsSectionWrapper />
       <TestimonialsSection />
       <AboutBilalSection />
       <PricingSection />
@@ -9469,8 +9477,8 @@ function Frame247() {
 function Navigation() {
   return (
     <div className="fixed top-0 h-[82px] md:h-[82px] z-[100] w-full">
-      {/* Frosted glass background - full width edge to edge */}
-      <div className="absolute inset-0 bg-[rgba(12,14,23,0.5)] backdrop-blur-md" />
+      {/* White navbar background */}
+      <div className="absolute inset-0 bg-white shadow-[0px_1px_16px_rgba(0,0,0,0.08)]" />
 
       {/* Menu content - centered within max-width container */}
       <div

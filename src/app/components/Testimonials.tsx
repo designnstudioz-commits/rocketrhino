@@ -122,10 +122,11 @@ interface TestimonialCardProps {
   text: string;
   name: string;
   company: string;
+  verified?: boolean;
   videoUrl?: string;
 }
 
-function TestimonialCard({ text, name, company, videoUrl }: TestimonialCardProps) {
+function TestimonialCard({ text, name, company, verified, videoUrl }: TestimonialCardProps) {
   return (
     <div className="bg-white rounded-[20px] sm:rounded-[24px] md:rounded-[28px] shadow-[0px_4px_14px_0px_rgba(170,25,146,0.14)] p-[24px] sm:p-[32px] md:p-[40px] flex flex-col justify-between w-full h-full min-h-[420px] sm:min-h-[440px] md:min-h-[470px] lg:min-h-[520px]">
       {/* Stars */}
@@ -141,17 +142,22 @@ function TestimonialCard({ text, name, company, videoUrl }: TestimonialCardProps
       </p>
 
       {/* Profile */}
-      <div className="flex items-center gap-[14px] sm:gap-[16px] md:gap-[18px] mt-[24px] sm:mt-[32px] md:mt-[36px]">
+      <div className="flex items-start gap-[14px] sm:gap-[16px] md:gap-[18px] mt-[24px] sm:mt-[32px] md:mt-[36px]">
         <div className="size-[48px] sm:size-[56px] md:size-[64px] rounded-full bg-[#f3e5ff] text-[#7c1ad3] flex items-center justify-center shrink-0">
           <User className="size-[22px] sm:size-[26px] md:size-[30px]" />
         </div>
-        <div>
-          <p className="font-['Space_Grotesk:Bold',sans-serif] font-bold text-[#7c1ad3] text-[15px] sm:text-[16px] md:text-[17px] leading-[22px] sm:leading-[24px] md:leading-[26px] mb-[2px]">
+        <div className="flex flex-col gap-[2px]">
+          <p className="font-['Space_Grotesk:Bold',sans-serif] font-bold text-[#7c1ad3] text-[15px] sm:text-[16px] md:text-[17px] leading-[22px] sm:leading-[24px] md:leading-[26px]">
             {name}
           </p>
           <p className="font-['Inter:Regular',sans-serif] text-[#9ca3af] text-[13px] sm:text-[14px] md:text-[15px] leading-[18px] sm:leading-[20px] md:leading-[22px]">
             {company}
           </p>
+          {verified && (
+            <p className="font-['Inter:Regular',sans-serif] text-[#16a34a] text-[12px] sm:text-[13px] leading-[18px] mt-[2px]">
+              Verified Review ✅
+            </p>
+          )}
         </div>
       </div>
       {videoUrl ? (
@@ -214,25 +220,35 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      text: '"Bilal has been excellent to work with — proactive, reliable, and consistently bringing strong partnership ideas to the table. He communicates clearly, takes ownership, and genuinely adds value beyond what’s expected."',
+      text: `"Bilal has been excellent to work with — proactive, reliable, and consistently bringing strong partnership ideas to the table. He communicates clearly, takes ownership, and genuinely adds value beyond what’s expected."`,
       name: "Ben A.",
       company: "Unavelle | Luxury Home Maintenance",
+      verified: true,
       videoUrl: "https://www.youtube.com/embed/uVnwr649bbc",
     },
     {
-      text: '"Bilal has a strong grasp of building structured partnership systems that go beyond ad-hoc efforts. He’s professional, easy to work with, and brings clear, strategic thinking to how partnerships should be approached."',
+      text: `"Bilal has a strong grasp of building structured partnership systems that go beyond ad-hoc efforts. He’s professional, easy to work with, and brings clear, strategic thinking to how partnerships should be approached."`,
       name: "Omer S.",
       company: "Sher & Co. Global | Boutique Investment Banking",
+      verified: true,
     },
     {
-      text: '"Bilal exceeded our expectations! We generate more than 50% of our revenue through partnerships as a result of his hard work, dedication, consistency and the amazing systems he has built for us."',
+      text: `"Easy to work with, highly competent, and offering great value for money."`,
       name: "Mo K.",
       company: "The AdExecutives | Digital Marketing Agency",
+      verified: true,
     },
     {
-      text: '"Bilal helped us turn our partner relationships into a more structured and revenue-focused program. His support directly helped us organize the process, activate co-selling opportunities, and close partner-driven deals."',
+      text: `"Bilal exceeded our expectations! We generate more than 50% of our revenue through partnerships as a result of his hard work, dedication, consistency and the amazing systems he has built for us."`,
+      name: "Zeeshan R.",
+      company: "Glovendor | Director",
+      verified: true,
+    },
+    {
+      text: `"Bilal helped us turn our partner relationships into a more structured and revenue-focused program. His support directly helped us organize the process, activate co-selling opportunities, and close partner-driven deals."`,
       name: "Law Firm",
       company: "Client Information Confidential Upon Request",
+      verified: true,
     },
   ];
 
@@ -286,7 +302,7 @@ export default function Testimonials() {
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-[40px] sm:mb-[60px] md:mb-[77px]">
           <h2 className="font-['Montserrat:SemiBold',sans-serif] font-semibold text-[#050047] text-[32px] sm:text-[48px] md:text-[60px] lg:text-[70px] leading-[40px] sm:leading-[58px] md:leading-[76px] lg:leading-[92px] tracking-[-1.12px] mb-[12px] sm:mb-[15px] max-w-[280px] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1074px]">
-            What Clients Say After{" "}
+            What Clients Say When{" "}
             <span className="text-[#bf00ff]">Partnerships</span> Start Working
           </h2>
           <p className="font-['Inter:Light',sans-serif] font-light text-[#0f0f0f] text-[16px] sm:text-[20px] md:text-[24px] leading-[24px] sm:leading-[28px] md:leading-[32px] max-w-[280px] sm:max-w-[500px] md:max-w-[700px]">
