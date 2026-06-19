@@ -150,7 +150,7 @@ function Heading() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full px-[16px]" data-name="Heading 2">
       <div className="[word-break:break-word] bg-clip-text bg-gradient-to-b flex flex-col font-['Inter:Bold',sans-serif] font-bold from-white justify-center leading-[0] not-italic relative shrink-0 text-[32px] md:text-[48px] lg:text-[60px] text-[transparent] text-center to-[#9ca3af] tracking-[-1.5px]">
-        <p className="leading-[40px] md:leading-[52px] lg:leading-[60px] mb-0 text-white md:text-black">Meet The Most Powerful</p>
+        <p className="leading-[40px] md:leading-[52px] lg:leading-[60px] mb-0 text-black">Meet The Most Powerful</p>
         <p className="leading-[40px] md:leading-[52px] lg:leading-[60px] text-[#bf00ff]">Growth Channel On Earth</p>
       </div>
     </div>
@@ -556,8 +556,8 @@ function Frame1() {
 
 function GrowthChannel() {
   return (
-    <div className="relative w-full flex justify-center mt-0 md:-mt-[160px] lg:-mt-[200px] py-[60px] md:py-[80px] pb-[100px] md:pb-[150px]" data-name="Growth channel">
-      <div className="hidden md:flex absolute top-0 left-0 right-0 h-[600px] pointer-events-none items-start justify-center z-0">
+    <div className="relative w-full flex justify-center -mt-[120px] md:-mt-[160px] lg:-mt-[200px] py-[60px] md:py-[80px] pb-[100px] md:pb-[150px]" data-name="Growth channel">
+      <div className="flex absolute top-0 left-0 right-0 h-[600px] pointer-events-none items-start justify-center z-0">
         <div className="w-full max-w-[2180px] h-[600px] scale-100">
           <GlowComponent />
         </div>
