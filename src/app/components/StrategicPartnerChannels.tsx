@@ -148,7 +148,7 @@ export default function StrategicPartnerChannels() {
         </div>
 
         {/* Carousel */}
-        <div className="overflow-hidden py-[12px]" ref={emblaRef}>
+        <div className="overflow-hidden py-[24px] px-[8px]" ref={emblaRef}>
           <div className="flex touch-pan-y cursor-grab active:cursor-grabbing items-stretch">
             {CARDS.map((card) => (
               <div
