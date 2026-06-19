@@ -1,8 +1,25 @@
-/* Partner slider dots */
+/* Partner slider base */
 .partner-slider .slick-list { overflow: visible; padding: 12px 0 32px; }
 .partner-slider .slick-slide { height: auto; }
 .partner-slider .slick-slide > div { height: 100%; }
 .partner-slider .slick-track { display: flex !important; align-items: stretch; }
+
+/* Force single card on mobile */
+@media (max-width: 768px) {
+  .partner-slider .slick-list { overflow: hidden !important; }
+  .partner-slider .slick-slide {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+  .partner-slider .slick-slide > div { width: 100% !important; box-sizing: border-box; height: 100%; }
+}
+
+/* Force 2 cards on tablet */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .partner-slider .slick-list { overflow: hidden !important; }
+  .partner-slider .slick-slide { box-sizing: border-box; }
+}
 
 .partner-slider .slick-dots {
   display: flex !important;
