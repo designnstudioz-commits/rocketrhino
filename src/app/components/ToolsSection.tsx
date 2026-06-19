@@ -50,12 +50,13 @@ const ROW2 = [
 function LogoCard({ name, img }: { name: string; img: string }) {
   return (
     <div className="flex-shrink-0 flex flex-col items-center gap-[12px] mx-[16px] cursor-default group">
-      <div className="flex items-center justify-center bg-white rounded-[16px] px-[28px] h-[100px] min-w-[180px] max-w-[280px] shadow-[0px_1px_6px_rgba(0,0,0,0.10)] group-hover:shadow-[0px_4px_22px_rgba(191,0,255,0.22)] group-hover:-translate-y-[3px] transition-all duration-300">
+      <div className="flex items-center justify-center bg-[#ffffff] rounded-[16px] px-[28px] h-[100px] min-w-[180px] max-w-[280px] shadow-[0px_1px_6px_rgba(0,0,0,0.10)] group-hover:shadow-[0px_4px_22px_rgba(191,0,255,0.22)] group-hover:-translate-y-[3px] transition-all duration-300">
         <img
           src={img}
           alt={name}
           className="object-contain"
-          style={{ height: "64px", width: "auto", maxWidth: "230px" }}
+          style={{ height: "64px", width: "auto", maxWidth: "230px", minWidth: "40px" }}
+          onError={(e) => { (e.target as HTMLImageElement).style.opacity = "0"; }}
         />
       </div>
       <span className="font-['Inter:Regular',sans-serif] font-normal italic text-[#9ca3af] text-[12px] text-center whitespace-nowrap leading-none">

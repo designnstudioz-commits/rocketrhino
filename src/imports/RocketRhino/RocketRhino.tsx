@@ -1197,7 +1197,7 @@ function Group27() {
     <div className="relative w-full flex justify-center items-center">
       <div className="relative w-full">
         <div
-          className="h-[400px] md:h-[959px] w-full flex justify-center items-center"
+          className="h-[400px] md:h-[959px] w-full flex justify-center items-center mt-[250px] md:mt-0"
           data-name="image 18"
         >
           <img
@@ -1213,7 +1213,7 @@ function Group27() {
               "linear-gradient(1.7204deg, rgb(5, 6, 10) 29.63%, rgba(5, 6, 10, 0) 96.977%)",
           }}
         />
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 px-[20px] md:px-0">
           <Frame234 />
         </div>
       </div>
@@ -7280,29 +7280,30 @@ function Frame243({ allExpanded }: { allExpanded: boolean }) {
     arrows: false,
     infinite: false,
     speed: 400,
+    cssEase: "ease-out",
     swipe: true,
     draggable: true,
     touchMove: true,
-    swipeToSlide: false,
-    touchThreshold: 10,
+    swipeToSlide: true,
+    touchThreshold: 5,
     slidesToShow: 4,
     slidesToScroll: 1,
-    adaptiveHeight: true,
+    adaptiveHeight: false,
     centerMode: false,
     variableWidth: false,
     centerPadding: "0px",
     responsive: [
       {
         breakpoint: 1240,
-        settings: { slidesToShow: 1, slidesToScroll: 1, swipe: true, draggable: true, touchMove: true, centerMode: false, centerPadding: "0px" },
+        settings: { slidesToShow: 1, slidesToScroll: 1, swipe: true, draggable: true, touchMove: true, swipeToSlide: true, touchThreshold: 5, centerMode: false, centerPadding: "0px" },
       },
       {
         breakpoint: 768,
-        settings: { slidesToShow: 1, slidesToScroll: 1, swipe: true, draggable: true, touchMove: true, centerMode: false, centerPadding: "0px" },
+        settings: { slidesToShow: 1, slidesToScroll: 1, swipe: true, draggable: true, touchMove: true, swipeToSlide: true, touchThreshold: 5, centerMode: false, centerPadding: "0px" },
       },
       {
         breakpoint: 480,
-        settings: { slidesToShow: 1, slidesToScroll: 1, swipe: true, draggable: true, touchMove: true, centerMode: false, centerPadding: "0px" },
+        settings: { slidesToShow: 1, slidesToScroll: 1, swipe: true, draggable: true, touchMove: true, swipeToSlide: true, touchThreshold: 5, centerMode: false, centerPadding: "0px" },
       },
     ],
   };
@@ -7310,9 +7311,16 @@ function Frame243({ allExpanded }: { allExpanded: boolean }) {
   return (
     <div className="w-full py-[30px] overflow-hidden">
       <style>{`
-        .pricing-slider .slick-list { overflow: hidden; touch-action: pan-x; -ms-touch-action: pan-x; }
+        .pricing-slider .slick-list { overflow: hidden; touch-action: pan-y pinch-zoom; }
+        .pricing-slider .slick-track { touch-action: pan-y pinch-zoom; }
         .pricing-slider .slick-slide { padding-top: 12px; padding-bottom: 12px; }
         .pricing-slider .slick-slide > div { user-select: none; }
+        /* Force exactly one full-width card on mobile/tablet */
+        @media (max-width: 1240px) {
+          .pricing-slider { max-width: 100%; overflow: hidden; }
+          .pricing-slider .slick-slide > div { width: 100%; }
+          .pricing-slider .slick-slide > div > div { width: 100% !important; max-width: 100% !important; }
+        }
       `}</style>
       <Slider className="pricing-slider" {...settings}>
         <div className="px-2">
