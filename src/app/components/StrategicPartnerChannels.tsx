@@ -147,8 +147,9 @@ export default function StrategicPartnerChannels() {
           </p>
         </div>
 
-        {/* Carousel */}
-        <div className="overflow-hidden py-[24px] px-[8px]" ref={emblaRef}>
+        {/* Carousel — negative margin compensates for the shadow padding */}
+        <div className="-mx-[16px] -my-[40px]">
+        <div className="overflow-hidden py-[60px] px-[16px]" ref={emblaRef}>
           <div className="flex touch-pan-y cursor-grab active:cursor-grabbing items-stretch">
             {CARDS.map((card) => (
               <div
@@ -175,6 +176,7 @@ export default function StrategicPartnerChannels() {
               aria-label={`Go to slide ${pageIndex + 1}`}
             />
           ))}
+        </div>
         </div>
       </div>
     </div>
