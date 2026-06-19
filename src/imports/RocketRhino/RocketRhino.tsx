@@ -14,9 +14,8 @@ import FAQSection from "../../app/components/FAQSection";
 import AboutBilal from "../../app/components/AboutBilal";
 import Testimonials from "../../app/components/Testimonials";
 import ToolsSection from "../../app/components/ToolsSection";
-import { useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
+import { useState, useCallback, useEffect } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 
 function Container() {
   return (
@@ -7271,92 +7270,123 @@ function Frame117Copy({
 }
 
 function Frame243({ allExpanded }: { allExpanded: boolean }) {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(
-    null,
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [slidesPerPage, setSlidesPerPage] = useState(4);
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    align: "start",
+    skipSnaps: false,
+    dragFree: false,
+  });
+
+  useEffect(() => {
+    const updateSlidesPerPage = () => {
+      const width = window.innerWidth;
+      if (width >= 1240) setSlidesPerPage(4);
+      else if (width >= 640) setSlidesPerPage(2);
+      else setSlidesPerPage(1);
+    };
+    updateSlidesPerPage();
+    window.addEventListener("resize", updateSlidesPerPage);
+    return () => window.removeEventListener("resize", updateSlidesPerPage);
+  }, []);
+
+  const TOTAL_CARDS = 5;
+  const totalPages = Math.max(1, Math.ceil(TOTAL_CARDS / slidesPerPage));
+  const lastPageStart = Math.max(0, TOTAL_CARDS - slidesPerPage);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    const selectedSnap = emblaApi.selectedScrollSnap();
+    const pageIndex =
+      selectedSnap >= lastPageStart
+        ? totalPages - 1
+        : Math.floor(selectedSnap / slidesPerPage);
+    setCurrentIndex(pageIndex);
+  }, [emblaApi, slidesPerPage, lastPageStart, totalPages]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    return () => { emblaApi.off("select", onSelect); };
+  }, [emblaApi, onSelect]);
+
+  const goToSlide = useCallback(
+    (pageIndex: number) => {
+      if (emblaApi) emblaApi.scrollTo(pageIndex * slidesPerPage);
+    },
+    [emblaApi, slidesPerPage]
   );
 
-  const settings = {
-    dots: true,
-    arrows: false,
-    infinite: false,
-    speed: 400,
-    cssEase: "ease-out",
-    swipe: true,
-    draggable: true,
-    touchMove: true,
-    swipeToSlide: true,
-    touchThreshold: 5,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    adaptiveHeight: false,
-    centerMode: false,
-    variableWidth: false,
-    centerPadding: "0px",
-    responsive: [
-      {
-        breakpoint: 1240,
-        settings: { slidesToShow: 1, slidesToScroll: 1, swipe: true, draggable: true, touchMove: true, swipeToSlide: true, touchThreshold: 5, centerMode: false, centerPadding: "0px" },
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 1, slidesToScroll: 1, swipe: true, draggable: true, touchMove: true, swipeToSlide: true, touchThreshold: 5, centerMode: false, centerPadding: "0px" },
-      },
-      {
-        breakpoint: 480,
-        settings: { slidesToShow: 1, slidesToScroll: 1, swipe: true, draggable: true, touchMove: true, swipeToSlide: true, touchThreshold: 5, centerMode: false, centerPadding: "0px" },
-      },
-    ],
-  };
-
   return (
-    <div className="w-full py-[30px] overflow-x-hidden max-w-full">
-      <Slider className="pricing-slider" {...settings}>
-        <div className="px-2">
-          <Frame117Copy
-            isHovered={hoveredCard === 0}
-            isExpanded={allExpanded}
-            onHover={() => setHoveredCard(0)}
-            onLeave={() => setHoveredCard(null)}
-            onToggleExpand={() => {}}
-          />
+    <div className="w-full">
+      <div className="-mx-[8px] -my-[20px]">
+        <div className="overflow-hidden py-[30px] px-[8px]" ref={emblaRef}>
+          <div className="flex touch-pan-y cursor-grab active:cursor-grabbing items-stretch">
+            <div className="flex-[0_0_100%] sm:flex-[0_0_50%] min-[1240px]:flex-[0_0_25%] min-w-0 px-[8px] flex flex-col">
+              <Frame117Copy
+                isHovered={hoveredCard === 0}
+                isExpanded={allExpanded}
+                onHover={() => setHoveredCard(0)}
+                onLeave={() => setHoveredCard(null)}
+                onToggleExpand={() => {}}
+              />
+            </div>
+            <div className="flex-[0_0_100%] sm:flex-[0_0_50%] min-[1240px]:flex-[0_0_25%] min-w-0 px-[8px] flex flex-col">
+              <Frame1
+                isHovered={hoveredCard === 1}
+                isExpanded={allExpanded}
+                onHover={() => setHoveredCard(1)}
+                onLeave={() => setHoveredCard(null)}
+                onToggleExpand={() => {}}
+              />
+            </div>
+            <div className="flex-[0_0_100%] sm:flex-[0_0_50%] min-[1240px]:flex-[0_0_25%] min-w-0 px-[8px] flex flex-col">
+              <Frame36
+                isHovered={hoveredCard === 2}
+                isExpanded={allExpanded}
+                onHover={() => setHoveredCard(2)}
+                onLeave={() => setHoveredCard(null)}
+                onToggleExpand={() => {}}
+              />
+            </div>
+            <div className="flex-[0_0_100%] sm:flex-[0_0_50%] min-[1240px]:flex-[0_0_25%] min-w-0 px-[8px] flex flex-col">
+              <Frame79
+                isHovered={hoveredCard === 3}
+                isExpanded={allExpanded}
+                onHover={() => setHoveredCard(3)}
+                onLeave={() => setHoveredCard(null)}
+                onToggleExpand={() => {}}
+              />
+            </div>
+            <div className="flex-[0_0_100%] sm:flex-[0_0_50%] min-[1240px]:flex-[0_0_25%] min-w-0 px-[8px] flex flex-col">
+              <Frame117
+                isHovered={hoveredCard === 4}
+                isExpanded={allExpanded}
+                onHover={() => setHoveredCard(4)}
+                onLeave={() => setHoveredCard(null)}
+                onToggleExpand={() => {}}
+              />
+            </div>
+          </div>
         </div>
-        <div className="px-2">
-          <Frame1
-            isHovered={hoveredCard === 1}
-            isExpanded={allExpanded}
-            onHover={() => setHoveredCard(1)}
-            onLeave={() => setHoveredCard(null)}
-            onToggleExpand={() => {}}
-          />
+        <div className="flex justify-center gap-[8px] mt-[16px]">
+          {Array.from({ length: totalPages }, (_, pageIndex) => (
+            <button
+              key={pageIndex}
+              onClick={() => goToSlide(pageIndex)}
+              className={`rounded-full transition-all duration-200 ${
+                pageIndex === currentIndex
+                  ? "bg-[#bf00ff] w-[24px] h-[8px]"
+                  : "bg-[rgba(191,0,255,0.3)] w-[8px] h-[8px]"
+              }`}
+              aria-label={`Go to slide ${pageIndex + 1}`}
+            />
+          ))}
         </div>
-        <div className="px-2">
-          <Frame36
-            isHovered={hoveredCard === 2}
-            isExpanded={allExpanded}
-            onHover={() => setHoveredCard(2)}
-            onLeave={() => setHoveredCard(null)}
-            onToggleExpand={() => {}}
-          />
-        </div>
-        <div className="px-2">
-          <Frame79
-            isHovered={hoveredCard === 3}
-            isExpanded={allExpanded}
-            onHover={() => setHoveredCard(3)}
-            onLeave={() => setHoveredCard(null)}
-            onToggleExpand={() => {}}
-          />
-        </div>
-        <div className="px-2">
-          <Frame117
-            isHovered={hoveredCard === 4}
-            isExpanded={allExpanded}
-            onHover={() => setHoveredCard(4)}
-            onLeave={() => setHoveredCard(null)}
-            onToggleExpand={() => {}}
-          />
-        </div>
-      </Slider>
+      </div>
     </div>
   );
 }
