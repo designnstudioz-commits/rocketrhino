@@ -1,7 +1,7 @@
-import svgPaths from "../../imports/Frame264/svg-2h5k2bx83k";
-import imgPartnershipLeaders from "../../imports/Frame264/163ee27f00bfe38ad226e9b73b4c5805b92a2a9c.png";
-import imgJMU from "../../imports/Frame264/d6e6d1b848d27254a7126edd9c10926d4a3eadff.png";
-import imgBilal from "../../imports/Frame264/fe4504c781d652bd62b8d6dea07f4b471319c879.png";
+﻿import svgPaths from "../../imports/Frame264/svg-2h5k2bx83k";
+import imgPartnershipLeaders from "../../imports/Frame264/163ee27f00bfe38ad226e9b73b4c5805b92a2a9c.webp";
+import imgJMU from "../../imports/Frame264/d6e6d1b848d27254a7126edd9c10926d4a3eadff.webp";
+import imgBilal from "../../imports/Frame264/fe4504c781d652bd62b8d6dea07f4b471319c879.webp";
 
 function CheckIcon() {
   return (

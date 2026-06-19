@@ -1,8 +1,8 @@
-import svgPaths from "./svg-xchc3o0uz7";
-import imgChatGptImageApr302026111718Pm1 from "./14ce2ba6b9999e2c9a6e2f047e87cb467de62727.png";
-import imgImage18 from "./8bb2bcea7a33c788e6711f838d811b022e8431c9.png";
-import imgChatGptImageApr302026114327Pm1 from "./e88503ab3a3bca72b684c4ba0a6166087c6ec93c.png";
-import imgChatGptImageApr242026033027Pm1 from "./08171ee5af9542130fd51ffd065386661a35166b.png";
+﻿import svgPaths from "./svg-xchc3o0uz7";
+import imgChatGptImageApr302026111718Pm1 from "./14ce2ba6b9999e2c9a6e2f047e87cb467de62727.webp";
+import imgImage18 from "./8bb2bcea7a33c788e6711f838d811b022e8431c9.webp";
+import imgChatGptImageApr302026114327Pm1 from "./e88503ab3a3bca72b684c4ba0a6166087c6ec93c.webp";
+import imgChatGptImageApr242026033027Pm1 from "./08171ee5af9542130fd51ffd065386661a35166b.webp";
 
 function Container() {
   return <div className="absolute bg-[rgba(34,211,238,0.07)] blur-[180px] left-[calc(75%+61.44px)] rounded-[22369600px] size-[600px] top-[-20.61px]" data-name="Container" />;

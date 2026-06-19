@@ -1,5 +1,5 @@
-import svgPaths from "./svg-2fra8fz9i1";
-import imgGeminiGeneratedImageEnu5Pbenu5Pbenu51 from "./78b36f5a0cdd9077a598bca524c1abdd04d4cfdc.png";
+﻿import svgPaths from "./svg-2fra8fz9i1";
+import imgGeminiGeneratedImageEnu5Pbenu5Pbenu51 from "./78b36f5a0cdd9077a598bca524c1abdd04d4cfdc.webp";
 import GlowComponent from "../Glow/Glow";
 
 

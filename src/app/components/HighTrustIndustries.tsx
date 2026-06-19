@@ -1,5 +1,5 @@
-import svgPaths from "../../imports/HighTrust/svg-evu526vvub";
-import imgNetwork from "../../imports/HighTrust/503222493397382df87458696c9728307c6ab35e.png";
+﻿import svgPaths from "../../imports/HighTrust/svg-evu526vvub";
+import imgNetwork from "../../imports/HighTrust/503222493397382df87458696c9728307c6ab35e.webp";
 
 interface IndustryTagProps {
   label: string;
