@@ -74,7 +74,7 @@ function Group3() {
           const el = document.getElementById("contact-form-section");
           if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
         }}
-        className="content-stretch flex flex-col isolate items-center px-[20.867px] py-[12.172px] relative rounded-[8693.576px] shrink-0 w-[224.317px] z-[3] cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-[#f3f4f6] mt-[6px]"
+        className="content-stretch flex flex-col isolate items-center px-[20.867px] py-[12.172px] relative rounded-[8693.576px] shrink-0 w-full z-[3] cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-[#f3f4f6] mt-[6px]"
       >
         <div aria-hidden className="absolute border-[#e5e7eb] border-[1.739px] border-solid inset-0 pointer-events-none rounded-[8693.576px]" />
         <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20.867px] not-italic relative shrink-0 text-[#111827] text-[13.911px] text-center tracking-[-0.4347px] w-full z-[1]">Start Test Drive</p>
@@ -3501,7 +3501,7 @@ function Frame8() {
   return (
     <div
       onClick={scrollToContactForm}
-      className="content-stretch flex flex-col isolate items-center px-[20.867px] py-[12.172px] relative rounded-[8693.576px] shrink-0 w-full md:w-[224.317px] z-[3] cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-[#f3f4f6]"
+      className="content-stretch flex flex-col isolate items-center px-[20.867px] py-[12.172px] relative rounded-[8693.576px] shrink-0 w-full z-[3] cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-[#f3f4f6]"
       data-name="Frame"
     >
       <div
@@ -4304,7 +4304,7 @@ function Frame43() {
   return (
     <div
       onClick={scrollToContactForm}
-      className="content-stretch flex flex-col isolate items-center px-[20.867px] py-[12.172px] relative rounded-[8693.576px] shrink-0 w-full md:w-[224.317px] z-[3] cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-[#f3f4f6]"
+      className="content-stretch flex flex-col isolate items-center px-[20.867px] py-[12.172px] relative rounded-[8693.576px] shrink-0 w-full z-[3] cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-[#f3f4f6]"
       data-name="Frame"
     >
       <div
@@ -6134,7 +6134,7 @@ function Frame123() {
   return (
     <div
       onClick={scrollToContactForm}
-      className="content-stretch flex flex-col isolate items-center px-[20.867px] py-[12.172px] relative rounded-[8693.576px] shrink-0 w-[224.317px] z-[3] cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-[#f3f4f6]"
+      className="content-stretch flex flex-col isolate items-center px-[20.867px] py-[12.172px] relative rounded-[8693.576px] shrink-0 w-full z-[3] cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-[#f3f4f6]"
       data-name="Frame"
     >
       <div
@@ -6164,7 +6164,7 @@ function Frame123Copy() {
   return (
     <div
       onClick={scrollToContactForm}
-      className="content-stretch flex flex-col isolate items-center px-[20.867px] py-[12.172px] relative rounded-[8693.576px] shrink-0 w-[224.317px] z-[3] cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-[#f3f4f6]"
+      className="content-stretch flex flex-col isolate items-center px-[20.867px] py-[12.172px] relative rounded-[8693.576px] shrink-0 w-full z-[3] cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-[#f3f4f6]"
       data-name="Frame"
     >
       <div
