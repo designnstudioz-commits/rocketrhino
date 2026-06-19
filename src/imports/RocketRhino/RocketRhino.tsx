@@ -9388,7 +9388,7 @@ function ImageSection() {
 // Section 3: Banner Section (Full Width)
 function BannerSection() {
   return (
-    <section className="w-full flex justify-center py-[32px]">
+    <section className="w-full flex justify-center py-0">
       <div className="w-full">
         <Frame223 />
       </div>
@@ -9408,7 +9408,7 @@ function FeaturedGrowthSection() {
 // Section 4: How It Works Section
 function HowItWorksSection() {
   return (
-    <section className="w-full flex justify-center py-[60px] md:py-[106px]">
+    <section className="w-full flex justify-center pt-[20px] md:pt-[30px] pb-[60px] md:pb-[80px]">
       <div className="w-full max-w-[1236px] flex justify-center px-[16px]">
         <Frame241 />
       </div>
