@@ -56,6 +56,8 @@ function LogoCard({ name, img }: { name: string; img: string }) {
           alt={name}
           className="object-contain"
           style={{ height: "64px", width: "auto", maxWidth: "230px", minWidth: "40px" }}
+          loading="lazy"
+          decoding="async"
           onError={(e) => { (e.target as HTMLImageElement).style.opacity = "0"; }}
         />
       </div>

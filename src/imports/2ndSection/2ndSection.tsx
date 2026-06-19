@@ -132,7 +132,7 @@ function WavyImageSection() {
   return (
     <div className="w-full h-[200px] md:h-[280px] lg:h-[348px] relative -mt-[20px] md:-mt-[30px]" data-name="Gemini_Generated_Image_enu5pbenu5pbenu5 1">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <img alt="" className="absolute h-[230.92%] left-0 max-w-none top-[-78.37%] w-full object-cover" src={imgGeminiGeneratedImageEnu5Pbenu5Pbenu51} />
+        <img alt="" className="absolute h-[230.92%] left-0 max-w-none top-[-78.37%] w-full object-cover" src={imgGeminiGeneratedImageEnu5Pbenu5Pbenu51} loading="lazy" decoding="async" />
       </div>
     </div>
   );

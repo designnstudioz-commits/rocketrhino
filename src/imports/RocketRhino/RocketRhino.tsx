@@ -1138,6 +1138,8 @@ function Frame231() {
             alt=""
             className="absolute h-[100.02%] left-0 max-w-none top-[-0.01%] w-[109.7%]"
             src={imgNewHeroImage}
+            fetchPriority="high"
+            decoding="async"
           />
         </div>
       </div>
@@ -1203,6 +1205,8 @@ function Group27() {
             alt=""
             className="h-full max-w-none object-cover object-center pointer-events-none w-full"
             src={imgImage18}
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div
@@ -1232,6 +1236,8 @@ function Frame223() {
             alt=""
             className="absolute h-[433.61%] inset-x-0 max-w-none top-[-156.15%] w-full"
             src={imgChatGptImageApr302026114327Pm1}
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>
@@ -2454,6 +2460,8 @@ function Background() {
             alt=""
             className="absolute h-[141.88%] left-[-48.2%] max-w-none top-[-29.6%] w-[194.43%]"
             src={imgChatGptImageApr242026033027Pm1}
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>
