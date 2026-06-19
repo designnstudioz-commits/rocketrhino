@@ -7283,7 +7283,7 @@ function Frame243({ allExpanded }: { allExpanded: boolean }) {
   useEffect(() => {
     const updateSlidesPerPage = () => {
       const width = window.innerWidth;
-      if (width >= 1240) setSlidesPerPage(4);
+      if (width >= 1280) setSlidesPerPage(4);
       else if (width >= 640) setSlidesPerPage(2);
       else setSlidesPerPage(1);
     };
@@ -7325,7 +7325,7 @@ function Frame243({ allExpanded }: { allExpanded: boolean }) {
       <div className="-mx-[8px] -my-[20px]">
         <div className="overflow-hidden py-[30px] px-[8px]" ref={emblaRef}>
           <div className="flex touch-pan-y cursor-grab active:cursor-grabbing items-stretch">
-            <div className="flex-[0_0_100%] sm:flex-[0_0_50%] min-[1240px]:flex-[0_0_25%] min-w-0 px-[8px] flex flex-col">
+            <div className="flex-[0_0_100%] sm:flex-[0_0_50%] xl:flex-[0_0_25%] min-w-0 px-[8px] flex flex-col">
               <Frame117Copy
                 isHovered={hoveredCard === 0}
                 isExpanded={allExpanded}
@@ -7334,7 +7334,7 @@ function Frame243({ allExpanded }: { allExpanded: boolean }) {
                 onToggleExpand={() => {}}
               />
             </div>
-            <div className="flex-[0_0_100%] sm:flex-[0_0_50%] min-[1240px]:flex-[0_0_25%] min-w-0 px-[8px] flex flex-col">
+            <div className="flex-[0_0_100%] sm:flex-[0_0_50%] xl:flex-[0_0_25%] min-w-0 px-[8px] flex flex-col">
               <Frame1
                 isHovered={hoveredCard === 1}
                 isExpanded={allExpanded}
@@ -7343,7 +7343,7 @@ function Frame243({ allExpanded }: { allExpanded: boolean }) {
                 onToggleExpand={() => {}}
               />
             </div>
-            <div className="flex-[0_0_100%] sm:flex-[0_0_50%] min-[1240px]:flex-[0_0_25%] min-w-0 px-[8px] flex flex-col">
+            <div className="flex-[0_0_100%] sm:flex-[0_0_50%] xl:flex-[0_0_25%] min-w-0 px-[8px] flex flex-col">
               <Frame36
                 isHovered={hoveredCard === 2}
                 isExpanded={allExpanded}
@@ -7352,7 +7352,7 @@ function Frame243({ allExpanded }: { allExpanded: boolean }) {
                 onToggleExpand={() => {}}
               />
             </div>
-            <div className="flex-[0_0_100%] sm:flex-[0_0_50%] min-[1240px]:flex-[0_0_25%] min-w-0 px-[8px] flex flex-col">
+            <div className="flex-[0_0_100%] sm:flex-[0_0_50%] xl:flex-[0_0_25%] min-w-0 px-[8px] flex flex-col">
               <Frame79
                 isHovered={hoveredCard === 3}
                 isExpanded={allExpanded}
@@ -7361,7 +7361,7 @@ function Frame243({ allExpanded }: { allExpanded: boolean }) {
                 onToggleExpand={() => {}}
               />
             </div>
-            <div className="flex-[0_0_100%] sm:flex-[0_0_50%] min-[1240px]:flex-[0_0_25%] min-w-0 px-[8px] flex flex-col">
+            <div className="flex-[0_0_100%] sm:flex-[0_0_50%] xl:flex-[0_0_25%] min-w-0 px-[8px] flex flex-col">
               <Frame117
                 isHovered={hoveredCard === 4}
                 isExpanded={allExpanded}
