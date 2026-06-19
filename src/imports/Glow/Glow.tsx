@@ -6,7 +6,7 @@ export default function Glow() {
       <img
         src={glowImage}
         alt=""
-        className="w-[2080px] max-w-none h-auto object-top"
+        className="w-[2080px] max-w-none h-[600px] object-top object-center"
         draggable="false"
         loading="lazy"
         decoding="async"
