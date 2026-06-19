@@ -7322,8 +7322,8 @@ function Frame243({ allExpanded }: { allExpanded: boolean }) {
 
   return (
     <div className="w-full">
-      <div className="-mx-[8px] -my-[20px]">
-        <div className="overflow-hidden py-[30px] px-[8px]" ref={emblaRef}>
+      <div className="-mx-[8px]">
+        <div className="overflow-hidden pt-[8px] pb-[4px] px-[8px]" ref={emblaRef}>
           <div className="flex touch-pan-y cursor-grab active:cursor-grabbing items-stretch">
             <div className="flex-[0_0_100%] sm:flex-[0_0_50%] xl:flex-[0_0_25%] min-w-0 px-[8px] flex flex-col">
               <Frame117Copy
@@ -7372,7 +7372,7 @@ function Frame243({ allExpanded }: { allExpanded: boolean }) {
             </div>
           </div>
         </div>
-        <div className="flex justify-center gap-[8px] mt-[16px]">
+        <div className="flex justify-center gap-[8px] mt-[12px]">
           {Array.from({ length: totalPages }, (_, pageIndex) => (
             <button
               key={pageIndex}
