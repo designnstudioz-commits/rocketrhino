@@ -148,8 +148,8 @@ export default function StrategicPartnerChannels() {
         </div>
 
         {/* Carousel — negative margin compensates for the shadow padding */}
-        <div className="-mx-[16px] -my-[40px]">
-        <div className="overflow-hidden py-[60px] px-[16px]" ref={emblaRef}>
+        <div className="-mx-[16px] -my-[10px] md:-my-[40px]">
+        <div className="overflow-hidden py-[16px] md:py-[60px] px-[16px]" ref={emblaRef}>
           <div className="flex touch-pan-y cursor-grab active:cursor-grabbing items-stretch">
             {CARDS.map((card) => (
               <div
