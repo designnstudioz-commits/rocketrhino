@@ -557,7 +557,7 @@ function Frame1() {
 function GrowthChannel() {
   return (
     <div className="relative w-full flex justify-center -mt-[120px] md:-mt-[160px] lg:-mt-[200px] py-[60px] md:py-[80px] pb-[100px] md:pb-[150px]" data-name="Growth channel">
-      <div className="absolute top-0 left-0 right-0 h-[450px] pointer-events-none flex items-start justify-center z-0">
+      <div className="hidden md:flex absolute top-0 left-0 right-0 h-[450px] pointer-events-none items-start justify-center z-0">
         <div className="w-full max-w-[2180px] h-[450px] scale-100">
           <GlowComponent />
         </div>
