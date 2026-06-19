@@ -41,6 +41,26 @@
   transform: scale(1.3);
 }
 
+/* Pricing slider base */
+.pricing-slider .slick-list { overflow: hidden !important; touch-action: pan-y pinch-zoom; }
+.pricing-slider .slick-track { touch-action: pan-y pinch-zoom; display: flex !important; }
+.pricing-slider .slick-slide { padding-top: 12px; padding-bottom: 12px; }
+.pricing-slider .slick-slide > div { user-select: none; }
+
+/* Force single card on tablet and mobile */
+@media (max-width: 1240px) {
+  .pricing-slider { max-width: 100% !important; overflow: hidden !important; }
+  .pricing-slider .slick-list { width: 100% !important; }
+  .pricing-slider .slick-slide {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
+  .pricing-slider .slick-slide > div { width: 100% !important; box-sizing: border-box; }
+  .pricing-slider .slick-slide > div > div { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+}
+
 /* Pricing slider dots */
 .pricing-slider .slick-dots {
   display: flex !important;

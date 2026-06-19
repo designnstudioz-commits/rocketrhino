@@ -7309,22 +7309,10 @@ function Frame243({ allExpanded }: { allExpanded: boolean }) {
   };
 
   return (
-    <div className="w-full py-[30px] overflow-hidden">
-      <style>{`
-        .pricing-slider .slick-list { overflow: hidden; touch-action: pan-y pinch-zoom; }
-        .pricing-slider .slick-track { touch-action: pan-y pinch-zoom; }
-        .pricing-slider .slick-slide { padding-top: 12px; padding-bottom: 12px; }
-        .pricing-slider .slick-slide > div { user-select: none; }
-        /* Force exactly one full-width card on mobile/tablet */
-        @media (max-width: 1240px) {
-          .pricing-slider { max-width: 100%; overflow: hidden; }
-          .pricing-slider .slick-slide > div { width: 100%; }
-          .pricing-slider .slick-slide > div > div { width: 100% !important; max-width: 100% !important; }
-        }
-      `}</style>
+    <div className="w-full py-[30px] overflow-x-hidden max-w-full">
       <Slider className="pricing-slider" {...settings}>
         <div className="px-2">
-          <Frame1
+          <Frame117Copy
             isHovered={hoveredCard === 0}
             isExpanded={allExpanded}
             onHover={() => setHoveredCard(0)}
@@ -7333,7 +7321,7 @@ function Frame243({ allExpanded }: { allExpanded: boolean }) {
           />
         </div>
         <div className="px-2">
-          <Frame36
+          <Frame1
             isHovered={hoveredCard === 1}
             isExpanded={allExpanded}
             onHover={() => setHoveredCard(1)}
@@ -7342,7 +7330,7 @@ function Frame243({ allExpanded }: { allExpanded: boolean }) {
           />
         </div>
         <div className="px-2">
-          <Frame79
+          <Frame36
             isHovered={hoveredCard === 2}
             isExpanded={allExpanded}
             onHover={() => setHoveredCard(2)}
@@ -7351,7 +7339,7 @@ function Frame243({ allExpanded }: { allExpanded: boolean }) {
           />
         </div>
         <div className="px-2">
-          <Frame117
+          <Frame79
             isHovered={hoveredCard === 3}
             isExpanded={allExpanded}
             onHover={() => setHoveredCard(3)}
@@ -7360,7 +7348,7 @@ function Frame243({ allExpanded }: { allExpanded: boolean }) {
           />
         </div>
         <div className="px-2">
-          <Frame117Copy
+          <Frame117
             isHovered={hoveredCard === 4}
             isExpanded={allExpanded}
             onHover={() => setHoveredCard(4)}
