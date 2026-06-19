@@ -1,5 +1,5 @@
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
+import { useState, useCallback, useEffect } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import {
   Handshake,
   Users,
@@ -67,40 +67,71 @@ const CARDS = [
 
 function PartnerCard({ icon, title, description }: typeof CARDS[0]) {
   return (
-    <div className="px-[10px] h-full">
-      <div className="bg-white border border-[#f0e8ff] rounded-[26px] shadow-[0px_18px_43.2px_0px_rgba(238,188,255,0.54)] h-full p-[28px] md:p-[36px] flex flex-col">
-        <IconBox>{icon}</IconBox>
-        <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#050047] text-[18px] md:text-[20px] leading-[26px] md:leading-[28px] mb-[12px] md:mb-[16px]">
-          {title}
-        </h3>
-        <p className="font-['Inter:Regular',sans-serif] font-normal text-[#9ca3af] text-[14px] md:text-[15px] leading-[22px] md:leading-[24px]">
-          {description}
-        </p>
-      </div>
+    <div className="bg-white border border-[#f0e8ff] rounded-[26px] shadow-[0px_18px_43.2px_0px_rgba(238,188,255,0.54)] h-full p-[28px] md:p-[36px] flex flex-col">
+      <IconBox>{icon}</IconBox>
+      <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#050047] text-[18px] md:text-[20px] leading-[26px] md:leading-[28px] mb-[12px] md:mb-[16px]">
+        {title}
+      </h3>
+      <p className="font-['Inter:Regular',sans-serif] font-normal text-[#9ca3af] text-[14px] md:text-[15px] leading-[22px] md:leading-[24px]">
+        {description}
+      </p>
     </div>
   );
 }
 
-const sliderSettings = {
-  dots: true,
-  arrows: false,
-  infinite: false,
-  speed: 400,
-  swipe: true,
-  draggable: true,
-  touchMove: true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  adaptiveHeight: false,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: { slidesToShow: 1, slidesToScroll: 1 },
-    },
-  ],
-};
-
 export default function StrategicPartnerChannels() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [slidesPerPage, setSlidesPerPage] = useState(3);
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    align: "start",
+    skipSnaps: false,
+    dragFree: false,
+  });
+
+  useEffect(() => {
+    const updateSlidesPerPage = () => {
+      const width = window.innerWidth;
+      if (width >= 1024) {
+        setSlidesPerPage(3);
+      } else if (width >= 640) {
+        setSlidesPerPage(2);
+      } else {
+        setSlidesPerPage(1);
+      }
+    };
+    updateSlidesPerPage();
+    window.addEventListener("resize", updateSlidesPerPage);
+    return () => window.removeEventListener("resize", updateSlidesPerPage);
+  }, []);
+
+  const totalPages = Math.max(1, Math.ceil(CARDS.length / slidesPerPage));
+  const lastPageStart = Math.max(0, CARDS.length - slidesPerPage);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    const selectedSnap = emblaApi.selectedScrollSnap();
+    const pageIndex =
+      selectedSnap >= lastPageStart
+        ? totalPages - 1
+        : Math.floor(selectedSnap / slidesPerPage);
+    setCurrentIndex(pageIndex);
+  }, [emblaApi, slidesPerPage, lastPageStart, totalPages]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    return () => { emblaApi.off("select", onSelect); };
+  }, [emblaApi, onSelect]);
+
+  const goToSlide = useCallback(
+    (pageIndex: number) => {
+      if (emblaApi) emblaApi.scrollTo(pageIndex * slidesPerPage);
+    },
+    [emblaApi, slidesPerPage]
+  );
+
   return (
     <div className="bg-[#fefbff] w-full py-[60px] sm:py-[80px] md:py-[100px] lg:py-[126px]">
       <div className="max-w-[1225px] mx-auto px-[16px] sm:px-[24px] md:px-[32px] lg:px-[40px]">
@@ -116,13 +147,34 @@ export default function StrategicPartnerChannels() {
           </p>
         </div>
 
-        {/* Slider */}
-        <div className="partner-slider">
-          <Slider {...sliderSettings}>
+        {/* Carousel */}
+        <div className="overflow-hidden py-[12px]" ref={emblaRef}>
+          <div className="flex touch-pan-y cursor-grab active:cursor-grabbing items-stretch">
             {CARDS.map((card) => (
-              <PartnerCard key={card.title} {...card} />
+              <div
+                key={card.title}
+                className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] min-w-0 px-[10px] sm:px-[12px] flex flex-col"
+              >
+                <PartnerCard {...card} />
+              </div>
             ))}
-          </Slider>
+          </div>
+        </div>
+
+        {/* Dots */}
+        <div className="flex justify-center gap-[8px] mt-[32px]">
+          {Array.from({ length: totalPages }, (_, pageIndex) => (
+            <button
+              key={pageIndex}
+              onClick={() => goToSlide(pageIndex)}
+              className={`rounded-full transition-all duration-200 ${
+                pageIndex === currentIndex
+                  ? "bg-[#bf00ff] w-[24px] h-[8px]"
+                  : "bg-[rgba(191,0,255,0.3)] w-[8px] h-[8px]"
+              }`}
+              aria-label={`Go to slide ${pageIndex + 1}`}
+            />
+          ))}
         </div>
       </div>
     </div>
